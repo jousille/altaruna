@@ -2,12 +2,18 @@
 
 Статический сайт для GitHub Pages: главная, «Купить», «Гайд по рунам», «Статьи», страница статьи.
 
-## Как выложить на GitHub (через браузер)
+## Как устроена публикация
 
-1. На github.com → **New repository**, например `altaruna`, Public.
-2. **Add file → Upload files** – перетащите всё содержимое папки (файлы `.html` и папки `assets`, `data`). Commit.
-3. **Settings → Pages** → Source: *Deploy from a branch*, Branch: `main` / `(root)` → Save.
-4. Через 1–2 минуты сайт откроется по адресу `https://jousille.github.io/altaruna/`.
+Сайт собирается автоматически: после каждой правки в ветке `main` GitHub Actions запускает
+`scripts/build.mjs`. Скрипт берёт `data/products.js` и `data/articles.js` и делает:
+
+- отдельную готовую страницу для каждой статьи (`/articles/<id>/`) и каждого товара (`/products/<id>/`);
+- заполненные главную, каталог, статьи и гайд – чтобы поисковики видели текст без JavaScript;
+- `sitemap.xml`, `robots.txt`, `404.html`, превью для соцсетей и разметку schema.org (товар с ценой, статья с датой).
+
+Ход сборки виден на вкладке **Actions** репозитория. Сайт обновляется через 1–2 минуты после правки.
+
+Один раз нужно включить: **Settings → Pages → Source: GitHub Actions**.
 
 ## Что где менять
 
@@ -45,8 +51,16 @@
    (или укажите другое имя в `GUIDE_FREE_URL`).
 2. **Платный гайд «Руны и камни».** В `GUIDE_FULL_URL` – ссылка, где его покупают, в `GUIDE_FULL_PRICE` – цена.
 
-## Свой домен altaruna.ru
+## Домен altaruna.ru
 
-Settings → Pages → Custom domain → `altaruna.ru` → Save. У регистратора домена добавьте
-A-записи на IP GitHub Pages: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153,
-и CNAME-запись `www` → `jousille.github.io`. После проверки включите Enforce HTTPS.
+1. У регистратора домена добавьте DNS-записи:
+   - четыре записи **A** для `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`;
+   - запись **CNAME** для `www` → `jousille.github.io`.
+2. **Settings → Pages → Custom domain** → `altaruna.ru` → Save.
+3. Когда проверка пройдёт (от нескольких минут до суток), поставьте галочку **Enforce HTTPS**.
+
+## Поисковики
+
+1. Яндекс Вебмастер (webmaster.yandex.ru) и Google Search Console – добавьте сайт `https://altaruna.ru`.
+2. Подтвердите права: проще всего через DNS-запись TXT у регистратора.
+3. Отправьте карту сайта: `https://altaruna.ru/sitemap.xml`.
