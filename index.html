@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alta Runa – рунические украшения и карты таро</title>
+<meta name="description" content="Украшения ручной работы с рунами Старшего Футарка и натуральными камнями. Карты таро и статьи о рунах, камнях и таро.">
+<meta property="og:title" content="Alta Runa – рунические украшения и карты таро">
+<meta property="og:description" content="Украшения ручной работы с рунами Старшего Футарка и натуральными камнями. Карты таро и статьи о рунах, камнях и таро.">
+<meta name="theme-color" content="#2B1D3C">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232B1D3C'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23C9AEE0'>ᚱ</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+Runic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="home">
+<header id="site-header" data-dark></header>
+
+<section class="hero">
+  <div class="wrap hero__in">
+    <div>
+      <span class="eyebrow">Руническая мастерская</span>
+      <h1>Украшения<br>с руной <em>и смыслом</em></h1>
+      <p>Камни, которые держат тепло рук, и знаки, которым больше тысячи лет. Каждое украшение собирается вручную – под ваше намерение.</p>
+      <div class="hero__cta">
+        <a href="shop.html" class="btn btn--accent">Выбрать украшение</a>
+        <a href="articles.html" class="btn btn--ghost">Читать о рунах</a>
+      </div>
+    </div>
+    <div class="ring" aria-hidden="true">
+      <div class="ring__track" id="ring-track"></div>
+      <div class="ring__circle"></div>
+      <div class="ring__circle ring__circle--2"></div>
+      <div class="ring__stone"><span class="rune">ᚨ</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Две <em>коллекции</em></h2>
+      <p>Руны на натуральных камнях и карты таро – для тех, кто говорит с собой на языке символов.</p>
+    </div>
+    <div class="collections">
+      <a href="shop.html#jewelry" class="coll tone-amethyst reveal">
+        <span class="coll__sym">ᚠ</span>
+        <h3>Рунические украшения</h3>
+        <p>Браслеты, подвески и кольца с рунами Старшего Футарка и подобранными к ним камнями.</p>
+        <span class="link-arrow">Смотреть →</span>
+      </a>
+      <a href="shop.html#tarot" class="coll tone-plum reveal">
+        <span class="coll__sym">☾</span>
+        <h3>Карты таро</h3>
+        <p>Колоды и наборы для первых раскладов и ежедневной практики.</p>
+        <span class="link-arrow">Смотреть →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Любимое <em>сейчас</em></h2>
+      <a href="shop.html" class="link-arrow">Весь каталог →</a>
+    </div>
+    <div class="grid" id="featured-products"></div>
+  </div>
+</section>
+
+<section class="section on-dark-section" id="about">
+  <div class="wrap">
+    <div class="about-grid reveal">
+      <div>
+        <span class="eyebrow">О бренде</span>
+        <h2>Alta Runa – <em>высокая руна</em></h2>
+      </div>
+      <div>
+        <p>Я делаю украшения, в которых знак и камень работают вместе. Руна задаёт намерение, камень – тон и настроение.</p>
+        <p>Каждую вещь я собираю вручную и подбираю сочетание так, чтобы оно было не просто красивым, а говорило именно о вашем.</p>
+      </div>
+    </div>
+    <div class="features reveal">
+      <div class="feature"><span class="rune">ᛟ</span><h3>Ручная работа</h3><p>Каждое украшение собрано вручную небольшой партией или под заказ.</p></div>
+      <div class="feature"><span class="rune">ᛜ</span><h3>Натуральные камни</h3><p>Янтарь, аметист, обсидиан, кварцы – без пластика и имитаций.</p></div>
+      <div class="feature"><span class="rune">ᚨ</span><h3>Знак со смыслом</h3><p>К украшению – описание руны и камня, чтобы вы знали, что носите.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap guide-promo">
+    <div class="guide-preview">
+      <div class="guide-preview__back"></div>
+      <img src="images/guide-preview.png" alt="Страница гайда по рунам">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow" style="color:var(--accent)">Гайд по рунам</span>
+      <h2>Узнайте, <em>что говорит</em> ваша руна</h2>
+      <p>Бесплатный гайд по всем 24 рунам Старшего Футарка: значения, светлые и теневые стороны, место в руническом ряду. А для тех, кто хочет глубже, – гайд о сочетаниях рун и камней.</p>
+      <div class="hero__cta">
+        <a href="#" data-guide-free class="btn btn--accent" download>Скачать бесплатно</a>
+        <a href="guide.html" class="btn btn--ghost">О гайде</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Свежие <em>статьи</em></h2>
+      <a href="articles.html" class="link-arrow">Все статьи →</a>
+    </div>
+    <div class="grid" id="latest-articles"></div>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2>Руна дня – в Telegram</h2>
+      <p>Короткие разборы рун, камней и арканов, новинки мастерской и украшения, которые уходят раньше, чем попадают на Авито.</p>
+      <a href="#" id="cta-telegram" target="_blank" rel="noopener" class="btn">Подписаться</a>
+    </div>
+  </div>
+</section>
+<footer id="site-footer"></footer>
+<script src="data/products.js"></script>
+<script src="data/articles.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
