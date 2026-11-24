@@ -14,7 +14,7 @@ import vm from "node:vm";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const OUT = path.join(ROOT, "_site");
-const SKIP = new Set(["_site", "scripts", ".github", ".git", "node_modules", "README.md", ".gitignore"]);
+const SKIP = new Set(["_site", "scripts", "design-system", ".github", ".git", "node_modules", "README.md", ".gitignore"]);
 
 /* ---------- данные и шаблоны ---------- */
 const ctx = { window: {} };
