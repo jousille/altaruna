@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
 /* ===================== ALTA RUNA ===================== */
 :root{
   --bg:#F9F2F6;
@@ -14,9 +15,9 @@
   --pink-soft:#F6DCE7;
   --radius:18px;
   --wrap:1200px;
-  --serif:"Cormorant Garamond", "Cormorant", Georgia, serif;
-  --sans:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --rune:"Noto Sans Runic", "Segoe UI Historic", "Segoe UI Symbol", serif;
+  --serif:"Prata", Georgia, serif;
+  --sans:"Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --rune:"BabelStone Elder","Noto Sans Runic","Segoe UI Historic","Segoe UI Symbol",serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -30,7 +31,7 @@ a{color:inherit;text-decoration:none}
 .header{position:sticky;top:0;z-index:50;background:rgba(249,242,246,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .header.on-dark{background:rgba(43,29,60,.8);color:var(--bone);border-color:rgba(244,237,247,.12)}
 .header__in{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:24px;letter-spacing:.22em;font-weight:600;text-transform:uppercase}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:24px;letter-spacing:.22em;font-weight:400;text-transform:uppercase;font-weight:400;font-synthesis:none}
 .logo .rune{font-size:22px;color:var(--accent-2);letter-spacing:0}
 .nav{display:flex;align-items:center;gap:28px}
 .nav a{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.75;transition:opacity .2s}
@@ -56,7 +57,7 @@ a{color:inherit;text-decoration:none}
 .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(35% 45% at 92% 15%, rgba(217,138,174,.30), transparent 70%), radial-gradient(60% 70% at 78% 50%, rgba(155,123,186,.42), transparent 70%), radial-gradient(40% 50% at 10% 100%, rgba(232,150,190,.22), transparent 70%)}
 .hero__in{position:relative;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:40px;min-height:calc(100vh - 72px);max-height:900px;padding:60px 0}
 .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent-2);margin-bottom:22px;display:block}
-.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(48px,6.4vw,96px);line-height:.98;letter-spacing:-.01em}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(48px,6.4vw,96px);line-height:.98;letter-spacing:-.01em;font-weight:400;font-synthesis:none}
 .hero h1 em{font-style:italic;color:var(--accent-2)}
 .hero p{margin-top:28px;max-width:470px;font-size:18px;color:rgba(244,237,247,.72)}
 .hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
@@ -82,7 +83,7 @@ a{color:inherit;text-decoration:none}
 .section--alt{background:var(--bg-2)}
 .on-dark-section{background:var(--dark);color:var(--bone)}
 .sec-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:54px;flex-wrap:wrap}
-.sec-head h2,.page-title h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.6vw,64px);line-height:1.02}
+.sec-head h2,.page-title h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,4.6vw,64px);line-height:1.02;font-weight:400;font-synthesis:none}
 .sec-head h2 em,.page-title h1 em{font-style:italic;color:var(--pink)}
 .sec-head p{max-width:420px;color:var(--ink-soft)}
 .link-arrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px;white-space:nowrap}
@@ -94,7 +95,7 @@ a{color:inherit;text-decoration:none}
 .coll::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), transparent 60%);z-index:-1}
 .coll__sym{position:absolute;top:30px;right:36px;font-family:var(--rune);font-size:150px;line-height:1;opacity:.28;z-index:-1;transition:transform .6s}
 .coll:hover .coll__sym{transform:rotate(-8deg) scale(1.08)}
-.coll h3{font-family:var(--serif);font-size:44px;font-weight:500;line-height:1}
+.coll h3{font-family:var(--serif);font-size:44px;font-weight:400;line-height:1;font-weight:400;font-synthesis:none}
 .coll p{margin-top:10px;opacity:.85;max-width:340px}
 .coll .link-arrow{margin-top:24px;align-self:flex-start}
 
@@ -124,10 +125,10 @@ a{color:inherit;text-decoration:none}
 .badge{position:absolute;top:16px;left:16px;background:var(--pink-soft);color:#8E3F66;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:6px 12px;border-radius:999px;z-index:2}
 .card__body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
 .card__meta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
-.card__title{font-family:var(--serif);font-size:27px;font-weight:600;line-height:1.1;margin:8px 0 10px}
+.card__title{font-family:var(--serif);font-size:27px;font-weight:400;line-height:1.1;margin:8px 0 10px;font-weight:400;font-synthesis:none}
 .card__desc{color:var(--ink-soft);font-size:15px;flex:1}
 .card__foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
-.price{font-family:var(--serif);font-size:28px;font-weight:600}
+.price{font-family:var(--serif);font-size:28px;font-weight:400;font-weight:400;font-synthesis:none}
 .price small{font-size:18px}
 
 /* ---------- Article cards ---------- */
@@ -138,7 +139,7 @@ a{color:inherit;text-decoration:none}
 .a-card__cover .art__sym{font-size:90px}
 .a-card__meta{display:flex;gap:14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
 .a-card__meta b{color:var(--accent);font-weight:600}
-.a-card h3{font-family:var(--serif);font-size:28px;line-height:1.12;font-weight:600;transition:color .2s}
+.a-card h3{font-family:var(--serif);font-size:28px;line-height:1.12;font-weight:400;transition:color .2s;font-weight:400;font-synthesis:none}
 .a-card:hover h3{color:var(--accent)}
 .a-card p{color:var(--ink-soft);font-size:15px}
 
@@ -146,10 +147,10 @@ a{color:inherit;text-decoration:none}
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(244,237,247,.12);border:1px solid rgba(244,237,247,.12);border-radius:var(--radius);overflow:hidden}
 .feature{background:var(--dark);padding:46px 38px}
 .feature .rune{font-size:42px;color:var(--accent-2)}
-.feature h3{font-family:var(--serif);font-size:30px;font-weight:500;margin:20px 0 10px}
+.feature h3{font-family:var(--serif);font-size:30px;font-weight:400;margin:20px 0 10px;font-weight:400;font-synthesis:none}
 .feature p{color:rgba(244,237,247,.65)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:60px}
-.about-grid h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.6vw,64px);line-height:1.02}
+.about-grid h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,4.6vw,64px);line-height:1.02;font-weight:400;font-synthesis:none}
 .about-grid h2 em{font-style:italic;color:var(--accent-2)}
 .about-grid p{color:rgba(244,237,247,.72);font-size:17px}
 .about-grid p+p{margin-top:16px}
@@ -157,7 +158,7 @@ a{color:inherit;text-decoration:none}
 /* ---------- CTA ---------- */
 .cta{border-radius:28px;padding:80px 60px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(120deg,var(--accent) 0%,#9A5E95 55%,var(--pink) 100%);color:#fff}
 .cta::before{content:"ᚨᛚᛏᚨ ᚱᚢᚾᚨ";position:absolute;inset:auto 0 -40px 0;font-family:var(--rune);font-size:200px;opacity:.08;white-space:nowrap;line-height:1}
-.cta h2{font-family:var(--serif);font-weight:500;font-size:clamp(36px,4.4vw,58px);line-height:1.05;position:relative}
+.cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.4vw,58px);line-height:1.05;position:relative;font-weight:400;font-synthesis:none}
 .cta p{max-width:520px;margin:18px auto 34px;opacity:.85;position:relative}
 .cta .btn{background:#fff;color:var(--accent);position:relative}
 
@@ -174,14 +175,14 @@ a{color:inherit;text-decoration:none}
 .article-hero{padding:70px 0 0}
 .article-hero .back{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
 .article-hero .back:hover{color:var(--accent)}
-.article-hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(40px,5.4vw,76px);line-height:1.02;margin:26px 0 20px;max-width:900px}
+.article-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.4vw,76px);line-height:1.02;margin:26px 0 20px;max-width:900px;font-weight:400;font-synthesis:none}
 .article-cover{position:relative;aspect-ratio:21/9;border-radius:var(--radius);overflow:hidden;margin:44px 0 0;display:grid;place-items:center}
 .article-cover img{width:100%;height:100%;object-fit:cover}
 .article-cover .art__sym{font-size:clamp(110px,14vw,200px)}
 .prose{max-width:720px;margin:64px auto 0;font-size:18px;line-height:1.8}
-.prose > p:first-child{font-family:var(--serif);font-size:25px;line-height:1.5}
+.prose > p:first-child{font-family:var(--serif);font-size:25px;line-height:1.5;font-weight:400;font-synthesis:none}
 .prose p{margin-bottom:22px}
-.prose h2{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.15;margin:46px 0 16px}
+.prose h2{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.15;margin:46px 0 16px;font-weight:400;font-synthesis:none}
 .prose ul{margin:0 0 22px 0;list-style:none}
 .prose li{position:relative;padding-left:30px;margin-bottom:10px}
 .prose li::before{content:"ᛜ";font-family:var(--rune);position:absolute;left:0;top:0;color:var(--pink)}
@@ -250,8 +251,8 @@ a{color:inherit;text-decoration:none}
 .guide-preview__back{position:absolute;inset:0;border-radius:10px;background:#E6D6E8;transform:rotate(-7deg) translate(-18px,10px);box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
 .inside{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .inside__item{padding:32px 28px;border:1px solid var(--line);border-radius:var(--radius);background:#FDFBFE}
-.inside__item span{font-family:var(--serif);font-size:44px;color:var(--pink);line-height:1}
-.inside__item h3{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.1;margin:18px 0 10px}
+.inside__item span{font-family:var(--serif);font-size:44px;color:var(--pink);line-height:1;font-weight:400;font-synthesis:none}
+.inside__item h3{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.1;margin:18px 0 10px;font-weight:400;font-synthesis:none}
 .inside__item p{color:var(--ink-soft);font-size:15px}
 .futhark{display:grid;grid-template-columns:repeat(8,1fr);gap:14px}
 .futhark__aett{grid-column:1/-1;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin:18px 0 2px}
@@ -260,7 +261,7 @@ a{color:inherit;text-decoration:none}
 .rune-tile:nth-child(odd) .rune{color:var(--pink)}
 .rune-tile:hover{border-color:var(--pink);transform:translateY(-4px);box-shadow:0 18px 30px -18px rgba(60,35,85,.4)}
 .rune-tile .rune{font-size:clamp(30px,3.4vw,46px);color:var(--accent);line-height:1}
-.rune-tile b{font-family:var(--serif);font-size:19px;font-weight:600}
+.rune-tile b{font-family:var(--serif);font-size:19px;font-weight:400;font-weight:400;font-synthesis:none}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;border:1px solid var(--accent);vertical-align:middle;margin-right:4px}
 .dot--free{background:var(--accent)}
 .offers{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px}
@@ -268,8 +269,8 @@ a{color:inherit;text-decoration:none}
 .offer--main{background:var(--dark);color:var(--bone);border-color:var(--dark)}
 .offer__tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
 .offer--main .offer__tag{color:var(--accent-2)}
-.offer h3{font-family:var(--serif);font-size:44px;font-weight:500;line-height:1;margin:14px 0 6px}
-.offer__sub{font-family:var(--serif);font-size:24px;opacity:.75}
+.offer h3{font-family:var(--serif);font-size:44px;font-weight:400;line-height:1;margin:14px 0 6px;font-weight:400;font-synthesis:none}
+.offer__sub{font-family:var(--serif);font-size:24px;opacity:.75;font-weight:400;font-synthesis:none}
 .offer ul{list-style:none;margin:26px 0 34px;flex:1}
 .offer li{padding:10px 0 10px 28px;position:relative;border-bottom:1px solid var(--line)}
 .offer--main li{border-color:rgba(244,237,247,.12)}
@@ -278,7 +279,7 @@ a{color:inherit;text-decoration:none}
 .offer .btn--ghost:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 .guide-promo{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
 .guide-promo .guide-preview{width:min(360px,80%)}
-.guide-promo h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.6vw,64px);line-height:1.02}
+.guide-promo h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,4.6vw,64px);line-height:1.02;font-weight:400;font-synthesis:none}
 .guide-promo h2 em{font-style:italic;color:var(--pink)}
 .guide-promo p{margin:20px 0 32px;color:var(--ink-soft);font-size:17px;max-width:480px}
 .guide-promo .hero__cta{margin-top:0}
@@ -300,13 +301,13 @@ a{color:inherit;text-decoration:none}
 
 /* розовые акценты гайда */
 .pro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:64px;border-radius:28px;background:linear-gradient(135deg,var(--pink-soft) 0%,#EAD9F0 100%)}
-.pro h2{font-family:var(--serif);font-weight:500;font-size:clamp(36px,4.2vw,58px);line-height:1.03}
+.pro h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.2vw,58px);line-height:1.03;font-weight:400;font-synthesis:none}
 .pro h2 em{font-style:italic;color:var(--accent)}
 .pro > div > p{margin-top:18px;color:var(--ink-soft);font-size:17px}
 .pro__list{display:grid;gap:14px}
 .pro__item{display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.7);border-radius:16px;padding:20px 22px}
 .pro__item .rune{font-size:30px;color:var(--pink);line-height:1;min-width:34px;text-align:center}
-.pro__item h3{font-family:var(--serif);font-size:23px;font-weight:600;line-height:1.1;margin-bottom:4px}
+.pro__item h3{font-family:var(--serif);font-size:23px;font-weight:400;line-height:1.1;margin-bottom:4px;font-weight:400;font-synthesis:none}
 .pro__item p{font-size:14.5px;color:var(--ink-soft)}
 .offer--main{background:linear-gradient(150deg,var(--dark) 0%,#4A2C5E 60%,#7A3E6A 100%)}
 .offer .offer__tag{color:var(--pink)}
@@ -325,8 +326,8 @@ a{color:inherit;text-decoration:none}
 .pthumb{aspect-ratio:1;border-radius:12px;overflow:hidden;border:2px solid transparent;padding:0;cursor:pointer;background:none;opacity:.65;transition:.2s}
 .pthumb img{width:100%;height:100%;object-fit:cover}
 .pthumb.active,.pthumb:hover{opacity:1;border-color:var(--pink)}
-.pinfo h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,4.2vw,58px);line-height:1.03;margin:10px 0 18px}
-.pprice{font-family:var(--serif);font-size:40px;font-weight:600}
+.pinfo h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,4.2vw,58px);line-height:1.03;margin:10px 0 18px;font-weight:400;font-synthesis:none}
+.pprice{font-family:var(--serif);font-size:40px;font-weight:400;font-weight:400;font-synthesis:none}
 .pprice small{font-size:26px}
 .plead{font-size:18px;color:var(--ink-soft);margin:18px 0 30px}
 .pbuy{display:flex;flex-wrap:wrap;gap:12px}
@@ -336,16 +337,70 @@ a{color:inherit;text-decoration:none}
 .pfacts small{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
 .pdetail{border-top:1px solid var(--line)}
 .pdetail:last-child{border-bottom:1px solid var(--line)}
-.pdetail summary{list-style:none;cursor:pointer;padding:20px 0;font-family:var(--serif);font-size:24px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.pdetail summary{list-style:none;cursor:pointer;padding:20px 0;font-family:var(--serif);font-size:24px;font-weight:400;display:flex;justify-content:space-between;align-items:center;font-weight:400;font-synthesis:none}
 .pdetail summary::-webkit-details-marker{display:none}
 .pdetail summary::after{content:"+";font-family:var(--sans);font-weight:300;font-size:26px;color:var(--pink);transition:transform .3s}
 .pdetail[open] summary::after{transform:rotate(45deg)}
 .pdetail p{padding:0 0 22px;color:var(--ink-soft);font-size:16px}
 .prose .product-link{display:flex;gap:20px;align-items:center;padding:18px;border-radius:var(--radius);background:var(--pink-soft);border:0;color:var(--ink);margin:30px 0}
 .prose .product-link img{width:110px;height:110px;border-radius:12px;object-fit:cover}
-.prose .product-link b{display:block;font-family:var(--serif);font-size:24px;line-height:1.15}
+.prose .product-link b{display:block;font-family:var(--serif);font-size:24px;line-height:1.15;font-weight:400;font-synthesis:none}
 .prose .product-link span{font-size:14px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
 @media (max-width:900px){
   .product__grid{grid-template-columns:1fr;gap:36px}
   .pgallery{position:static}
 }
+
+/* Prata has a single regular weight; avoid synthetic bold/italic in headings. */
+.hero h1,.sec-head h2,.page-title h1{font-weight:400;line-height:1.12}
+.hero h1 em{font-style:normal}
+
+/* ALTA RUNA: Prata typography trial */
+.hero h1{font-size:clamp(36px,5.1vw,76px);line-height:1.15;font-weight:400;font-synthesis:none}
+.sec-head h2{font-size:clamp(30px,3.8vw,48px);line-height:1.2;font-weight:400;font-synthesis:none}
+.page-title h1{font-size:clamp(32px,4vw,52px);line-height:1.18;font-weight:400;font-synthesis:none}
+.coll h3{font-size:36px;line-height:1.2;font-weight:400;font-synthesis:none}
+.cta h2{font-size:clamp(30px,3.7vw,48px);line-height:1.2;font-weight:400;font-synthesis:none}
+.feature h3{font-size:25px;line-height:1.25;font-weight:400;font-synthesis:none}
+.card__title{font-size:23px;line-height:1.25;font-weight:400;font-synthesis:none}
+.pinfo h1{font-size:clamp(30px,3.4vw,46px);line-height:1.18;font-weight:400;font-synthesis:none}
+.a-card h3{font-size:24px;line-height:1.25;font-weight:400;font-synthesis:none}
+.article-hero h1{font-size:clamp(32px,4.3vw,60px);line-height:1.18;font-weight:400;font-synthesis:none}
+.prose h2{font-size:28px;line-height:1.3;font-weight:400;font-synthesis:none}
+.prose > p:first-child{font-size:22px;line-height:1.5;font-weight:400;font-synthesis:none}
+.price{font-size:24px;line-height:1.2;font-weight:400;font-synthesis:none}
+.pprice{font-size:34px;line-height:1.2;font-weight:400;font-synthesis:none}
+.offer h3{font-size:36px;line-height:1.2;font-weight:400;font-synthesis:none}
+.rune-tile b{font-size:18px;line-height:1.25;font-weight:400;font-synthesis:none}
+.about-grid h2{font-size:clamp(30px,3.8vw,48px);line-height:1.2;font-weight:400;font-synthesis:none}
+.guide-promo h2{font-size:clamp(30px,3.8vw,48px);line-height:1.2;font-weight:400;font-synthesis:none}
+.pro h2{font-size:clamp(30px,3.7vw,48px);line-height:1.2;font-weight:400;font-synthesis:none}
+.inside__item h3{font-size:24px;line-height:1.25;font-weight:400;font-synthesis:none}
+.inside__item span{font-size:36px;line-height:1.15;font-weight:400;font-synthesis:none}
+.offer__sub{font-size:22px;line-height:1.25;font-weight:400;font-synthesis:none}
+.pro__item h3{font-size:22px;line-height:1.25;font-weight:400;font-synthesis:none}
+.pdetail summary{font-size:22px;line-height:1.25;font-weight:400;font-synthesis:none}
+.prose .product-link b{font-size:22px;line-height:1.25;font-weight:400;font-synthesis:none}
+.hero h1 em,.sec-head h2 em,.page-title h1 em,.about-grid h2 em,.guide-promo h2 em,.pro h2 em{font-style:normal}
+.btn--sm{font-size:13px}
+.badge{font-size:12px}
+@media(max-width:560px){.prose > p:first-child{font-size:20px}}
+
+/* Original brand wordmark */
+.logo--brand{flex-shrink:0;display:inline-flex;align-items:center}
+.logo--brand img{display:block;width:164px;height:auto}
+.header.on-dark .logo--brand img,.footer .logo--brand img{filter:brightness(0) invert(1)}
+.footer .logo--brand img{width:190px}
+@media(max-width:560px){.logo--brand img{width:136px}}
+
+
+/* Italiana wordmark trial */
+.logo--brand{font-family:"Italiana",Georgia,serif;font-size:36px;font-weight:400;letter-spacing:.12em;line-height:1;white-space:nowrap;font-synthesis:none;color:#2F0544}
+.header.on-dark .logo--brand,.footer .logo--brand{color:var(--bone)}
+.footer .logo--brand{display:inline-flex;flex-direction:column;gap:8px;font-size:36px}
+.logo--brand small{font-family:var(--sans);font-size:9px;letter-spacing:.14em;font-weight:400}
+@media(max-width:560px){.header .logo--brand{font-size:26px;letter-spacing:.08em}}
+
+/* Elder Futhark web font trial */
+@font-face{font-family:"BabelStone Elder";src:url("./BabelStoneRunicElderFuthark.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+.footer .logo--brand{gap:0}

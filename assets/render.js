@@ -46,7 +46,7 @@
       const link = (href, text, key) => `<a href="${href}"${page === key ? ' class="active"' : ""}>${text}</a>`;
       return `
       <div class="wrap header__in">
-        <a href="${u("index.html")}" class="logo">Alta <span class="rune">ᚱ</span> Runa</a>
+        <a href="${u("index.html")}" class="logo logo--brand" aria-label="ALTA RUNA">ALTA RUNA</a>
         <nav class="nav" id="nav">
           ${link(u("index.html"), "Главная", "home")}
           ${link(u("shop.html"), "Купить", "shop")}
@@ -69,7 +69,7 @@
       <div class="wrap">
         <div class="footer__top">
           <div>
-            <a href="${u("index.html")}" class="logo">Alta <span class="rune">ᚱ</span> Runa</a>
+            <a href="${u("index.html")}" class="logo logo--brand"><span>ALTA RUNA</span></a>
             <p>Украшения ручной работы с рунами и натуральными камнями. Карты таро для тех, кто ищет свой язык символов.</p>
           </div>
           <div>
@@ -220,3 +220,5 @@
 
   root.AltaRender = AltaRender;
 })(typeof window !== "undefined" ? window : globalThis);
+
+
