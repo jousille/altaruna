@@ -84,7 +84,11 @@
           </div>
           <div>
             <h4>Мы на связи</h4>
-            <ul>${social}</ul>
+            <ul>${social}<li><a href="mailto:altaruna@yandex.ru">altaruna@yandex.ru</a></li></ul>
+          </div>
+          <div class="footer__documents">
+            <h4>Документы</h4>
+            <ul><li><a href="${u("privacy.html")}">Политика конфиденциальности</a></li><li><a href="${u("terms.html")}">Пользовательское соглашение</a></li><li><a href="${u("consent.html")}">Согласие на обработку данных</a></li><li><button type="button" data-cookie-settings>Настройки cookies</button></li></ul>
           </div>
         </div>
         <div class="footer__bot">
