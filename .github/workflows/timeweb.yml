@@ -35,6 +35,9 @@ jobs:
           : "${FTP_SERVER:?Missing FTP_SERVER}"
           : "${FTP_USERNAME:?Missing FTP_USERNAME}"
           : "${FTP_PASSWORD:?Missing FTP_PASSWORD}"
+          echo "=== Runner public IPv4 ==="
+          curl -4 --fail --silent --show-error --connect-timeout 10 --max-time 20 https://api.ipify.org || echo "IP lookup failed"
+          echo
           echo "Checking IPv4 TCP connectivity to FTP port 21"
           if timeout 25 bash -c 'exec 3<>/dev/tcp/92.53.96.192/21'; then
             echo "TCP port 21 reachable"
