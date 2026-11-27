@@ -26,12 +26,12 @@ window.ALTA_CONFIG = {
 
   /* ----- ГАЙДЫ ----- */
   // Бесплатный гайд по рунам: загрузите PDF в папку guides и укажите путь
-  GUIDE_FREE_URL: "guides/alta-runa-guide.pdf",
+  GUIDE_FREE_URL: "guides/alta-runa-guide-free.pdf",
   // Платный гайд «Руны и камни: сочетания и применение» – ссылка на оплату
   // (Авито, lava.top, Telegram-бот и т.п.)
-  GUIDE_FULL_URL: "https://www.avito.ru/",
+  GUIDE_FULL_URL: "",
   // Цена платного гайда, ₽ (0 – цену не показывать)
-  GUIDE_FULL_PRICE: 990
+  GUIDE_FULL_PRICE: 0
 };
 
 window.ALTA_PRODUCTS = [
