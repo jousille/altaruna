@@ -8,6 +8,7 @@ on:
         type: choice
         options:
           - check
+          - test-write
           - deploy
         default: check
 
@@ -45,6 +46,34 @@ jobs:
             echo "::warning::TCP connection to FTP IPv4 endpoint failed"
           fi
           curl -4 --fail --silent --show-error --connect-timeout 30 --max-time 90 --write-out '\nDNS: %{time_namelookup}s; TCP: %{time_connect}s; first byte: %{time_starttransfer}s; FTP response: %{response_code}\n' --user "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER:21/"
+      - name: Test FTP write and cleanup
+        if: inputs.mode == 'test-write'
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          name="alta-runa-deploy-probe-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}.txt"
+          tmp=$(mktemp -d)
+          base="ftp://$FTP_SERVER:21/"
+          opts=(-4 --fail --silent --show-error --connect-timeout 30 --max-time 90 --user "$FTP_USERNAME:$FTP_PASSWORD")
+          cleanup() {
+            curl "${opts[@]}" --quote "DELE $name" "$base" -o /dev/null || echo "::warning::Cleanup failed; check $name on server"
+            rm -rf "$tmp"
+          }
+          trap cleanup EXIT
+          printf 'ALTA RUNA deployment probe %s\n' "$name" > "$tmp/original"
+          curl "${opts[@]}" --upload-file "$tmp/original" "$base$name"
+          echo "Upload successful"
+          curl "${opts[@]}" "$base$name" -o "$tmp/download"
+          cmp "$tmp/original" "$tmp/download"
+          echo "Content verified"
+          curl "${opts[@]}" --quote "DELE $name" "$base" -o /dev/null
+          trap - EXIT
+          rm -rf "$tmp"
+          echo "Probe deleted successfully"
       - name: Deployment safety gate
         if: inputs.mode == 'deploy'
         run: |
