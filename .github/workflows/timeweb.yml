@@ -35,7 +35,13 @@ jobs:
           : "${FTP_SERVER:?Missing FTP_SERVER}"
           : "${FTP_USERNAME:?Missing FTP_USERNAME}"
           : "${FTP_PASSWORD:?Missing FTP_PASSWORD}"
-          curl --fail --silent --show-error --connect-timeout 20 --max-time 60 --user "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER:21/"
+          echo "Checking IPv4 TCP connectivity to FTP port 21"
+          if timeout 25 bash -c 'exec 3<>/dev/tcp/92.53.96.192/21'; then
+            echo "TCP port 21 reachable"
+          else
+            echo "::warning::TCP connection to FTP IPv4 endpoint failed"
+          fi
+          curl -4 --fail --silent --show-error --connect-timeout 30 --max-time 90 --write-out '\nDNS: %{time_namelookup}s; TCP: %{time_connect}s; first byte: %{time_starttransfer}s; FTP response: %{response_code}\n' --user "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER:21/"
       - name: Deployment safety gate
         if: inputs.mode == 'deploy'
         run: |
