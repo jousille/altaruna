@@ -1,0 +1,43 @@
+name: Deploy to Timeweb
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Operation
+        type: choice
+        options:
+          - check
+          - deploy
+        default: check
+
+permissions:
+  contents: read
+
+concurrency:
+  group: timeweb-manual
+  cancel-in-progress: false
+
+jobs:
+  check:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check Explicit FTPS (read only)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          : "${FTP_SERVER:?Missing FTP_SERVER}"
+          : "${FTP_USERNAME:?Missing FTP_USERNAME}"
+          : "${FTP_PASSWORD:?Missing FTP_PASSWORD}"
+          curl --fail --silent --show-error --ssl-reqd --connect-timeout 20 --max-time 60 --user "$FTP_USERNAME:$FTP_PASSWORD" "ftp://$FTP_SERVER:21/"
+      - name: Deployment safety gate
+        if: inputs.mode == 'deploy'
+        run: |
+          echo "::error::Deployment is not enabled until FTPS and the destination directory have been verified."
+          exit 1
