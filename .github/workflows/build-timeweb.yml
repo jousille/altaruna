@@ -1,0 +1,32 @@
+name: Build Timeweb archive
+on:
+  push:
+    branches: [release/timeweb]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/build.mjs
+      - name: Validate archive
+        run: |
+          node --check assets/main.js
+          test -f _site/consent.html
+          test -f _site/privacy.html
+          test -f _site/terms.html
+          test -f _site/assets/fonts/onest.ttf
+          test -f _site/guides/alta-runa-guide-free.pdf
+          test ! -e _site/CNAME
+          test ! -e _site/logo-test.html
+          grep -q 'https://altaruna.ru/' _site/sitemap.xml
+          ! grep -R -E 'fonts\\.googleapis\\.com|fonts\\.gstatic\\.com' _site --include='*.html' --include='*.css'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: alta-runa-timeweb
+          path: _site/
+          if-no-files-found: error

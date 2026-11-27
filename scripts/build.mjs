@@ -14,7 +14,7 @@ import vm from "node:vm";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const OUT = path.join(ROOT, "_site");
-const SKIP = new Set(["_site", "scripts", "design-system", ".github", ".git", "node_modules", "README.md", ".gitignore"]);
+const SKIP = new Set(["_site", "scripts", "design-system", ".github", ".git", "node_modules", "README.md", ".gitignore", "CNAME", "logo-test.html"]);
 
 /* ---------- данные и шаблоны ---------- */
 const ctx = { window: {} };
@@ -78,9 +78,6 @@ function headTag({ title, desc, base }) {
 <meta property="og:description" content="${esc(desc)}">
 <meta name="theme-color" content="#2B1D3C">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232B1D3C'/><text x='50' y='72' font-size='64' text-anchor='middle' fill='%23C9AEE0'>ᚱ</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600;700&family=Noto+Sans+Runic&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${base}assets/style.css">
 </head>`;
 }
@@ -100,7 +97,10 @@ const ROOT_PAGES = {
   "index.html": { page: "home", url: SITE + "/", extra: ld({ "@context": "https://schema.org", "@graph": [ORG, { "@type": "WebSite", name: "Alta Runa", url: SITE + "/", inLanguage: "ru" }] }) },
   "shop.html": { page: "shop", url: SITE + "/shop.html" },
   "articles.html": { page: "articles", url: SITE + "/articles.html" },
-  "guide.html": { page: "guide", url: SITE + "/guide.html", image: "images/guide-cover.jpg" }
+  "guide.html": { page: "guide", url: SITE + "/guide.html", image: "images/guide-cover.jpg" },
+  "privacy.html": { page: "legal", url: SITE + "/privacy.html" },
+  "consent.html": { page: "legal", url: SITE + "/consent.html" },
+  "terms.html": { page: "legal", url: SITE + "/terms.html" }
 };
 const fillId = (html, id, inner) => html.replace(new RegExp(`(id="${id}"[^>]*>)(</(div|nav|header|footer)>)`), `$1${inner}$2`);
 
@@ -237,6 +237,6 @@ Disallow: /product.html
 
 Sitemap: ${SITE}/sitemap.xml
 `);
-write("CNAME", new URL(SITE).host + "\n");
+// Timeweb build: no GitHub Pages CNAME.
 
 console.log(`Готово: ${R.ARTICLES.length} статей, ${R.PRODUCTS.length} товаров, ${urls.length} адресов в sitemap → _site/`);
